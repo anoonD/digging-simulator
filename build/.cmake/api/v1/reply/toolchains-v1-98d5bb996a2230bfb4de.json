@@ -1,0 +1,68 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"/nix/store/2dv93bbc06c7zg866qid73j3r36zz3jx-gcc-10.3.0/include/c++/10.3.0",
+						"/nix/store/2dv93bbc06c7zg866qid73j3r36zz3jx-gcc-10.3.0/include/c++/10.3.0/x86_64-unknown-linux-gnu",
+						"/nix/store/2dv93bbc06c7zg866qid73j3r36zz3jx-gcc-10.3.0/include/c++/10.3.0/backward",
+						"/nix/store/2dv93bbc06c7zg866qid73j3r36zz3jx-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/include",
+						"/nix/store/2dv93bbc06c7zg866qid73j3r36zz3jx-gcc-10.3.0/include",
+						"/nix/store/2dv93bbc06c7zg866qid73j3r36zz3jx-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0/include-fixed",
+						"/nix/store/vccvfa5bjb9dv4x6zq5gjf1yp58y4brg-glibc-2.33-108-dev/include"
+					],
+					"linkDirectories" : 
+					[
+						"/nix/store/4s21k8k7p1mfik0b33r2spq5hq7774k1-glibc-2.33-108/lib",
+						"/nix/store/ndnqiz3nnifj1blhg9q626xlmkqq1nmh-gcc-10.3.0-lib/lib",
+						"/nix/store/pja9g36cy32z3d51942jqk91a6l2d5nv-gcc-wrapper-10.3.0/bin",
+						"/nix/store/2dv93bbc06c7zg866qid73j3r36zz3jx-gcc-10.3.0/lib/gcc/x86_64-unknown-linux-gnu/10.3.0",
+						"/nix/store/2dv93bbc06c7zg866qid73j3r36zz3jx-gcc-10.3.0/lib64",
+						"/nix/store/2dv93bbc06c7zg866qid73j3r36zz3jx-gcc-10.3.0/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"stdc++",
+						"m",
+						"gcc_s",
+						"gcc",
+						"c",
+						"gcc_s",
+						"gcc"
+					]
+				},
+				"path" : "/home/mateo/.nix-profile/bin/g++",
+				"version" : "10.3.0"
+			},
+			"language" : "CXX",
+			"sourceFileExtensions" : 
+			[
+				"C",
+				"M",
+				"c++",
+				"cc",
+				"cpp",
+				"cxx",
+				"m",
+				"mm",
+				"mpp",
+				"CPP",
+				"ixx",
+				"cppm"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

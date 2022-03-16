@@ -1,6 +1,9 @@
 .idea
 compile.sh
-
+.cache
+.replit
+replit.nix
+gitinit.sh
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/c++,cmake,clion,eclipse,visualstudiocode
