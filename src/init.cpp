@@ -28,5 +28,5 @@ void engine::init() {
         system("clear");
     }
     printf("You have arrived.\n");
-    usleep(2000000);
+    usleep(read_speed);
 }

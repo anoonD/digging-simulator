@@ -1,0 +1,2 @@
+run = "bash compile.sh test"
+

@@ -5,7 +5,7 @@ void engine::menu() {
     printf(
             "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
             "| D I G G I N G - S I M U L A T O R |\n"
-            "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n"
+            "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
     );
     printf("Balance: $%d\n", bal);
     printf("XP: %d\n", xp);
@@ -14,7 +14,7 @@ void engine::menu() {
 
     printf("1: Dig\n");
     printf("2: Sell\n");
-    printf("\nq: Quit\n");
+    printf("q: Quit\n");
 
     printf("\n>> ");
 }

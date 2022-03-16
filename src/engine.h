@@ -16,6 +16,7 @@ private:
     struct Item {
         std::string name;
         int sell_cost;
+        int xp_item;
     };
 
     std::vector<Item> bag; // User inventory
@@ -25,17 +26,24 @@ private:
         level{0}, // Level
         max_inv{4}; // Max Inventory Space
 
-    Item rewards[10] = {
-            {"Bottle Cap", 5},        // 0  Common 60%
-            {"Shoe", 10},             // 1
-            {"Can", 10},              // 2
-            {"Candy Wraper", 10},     // 3
-            {"Animal Skull", 20},     // 4
-            {"Car Tire", 50},         // 5  Uncommon 35%
-            {"Metal Scraps", 100},    // 6
-            {"Trident", 200},         // 7
-            {"Dinosaur Bone", 500},   // 8  Rare 5%
-            {"Diamond", 1000},        // 9
+    Item rewards[3][4] = {
+        {   {"Bottle Cap", 5, 10},        // 0  Common 60%
+            {"Shoe", 10, 10},             // 1
+            {"Can", 10, 10},              // 2
+            {"Candy Wraper", 10, 10},     // 3
+        },
+        {
+            {"Animal Skull", 20, 20},     // 0 Uncommon 35%
+            {"Car Tire", 50, 30},         // 1 
+            {"Metal Scraps", 100, 20},    // 2
+            {"Trident", 150, 20},         // 3
+        },
+        {
+            {"Engine Parts", 200, 30},      // 0 Rare 5%
+            {"Machine Gun Scraps", 250, 30},// 1
+            {"Dinosaur Bone", 500, 30},     // 2
+            {"Diamond", 1000, 30},          // 3
+        }
     };
 
 public:
@@ -49,4 +57,6 @@ public:
 
     int getBagSize() { return bag.size(); }
     int getMaxInv() { return max_inv; }
+private:
+    Item randomPicker();
 };
