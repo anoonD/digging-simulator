@@ -3,6 +3,7 @@
 void engine::menu() {
     system("clear");
     fmt::print(
+        fmt::emphasis::bold | fg(fmt::color::red) | bg(fmt::color::dark_turquoise),
             "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
             "| D I G G I N G - S I M U L A T O R |\n"
             "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"

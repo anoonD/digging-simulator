@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
-#include <fmt/core.h>
+#include <fmt/color.h>
 #include <unistd.h>
 #include "color.h"
 
