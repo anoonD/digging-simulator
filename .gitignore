@@ -5,6 +5,8 @@ compile.sh
 replit.nix
 gitinit.sh
 build
+.direnv
+.envrc
 
 # Created by https://www.toptal.com/developers/gitignore/api/c++,cmake,clion,eclipse,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=c++,cmake,clion,eclipse,visualstudiocode
