@@ -8,6 +8,7 @@ compile.sh
 replit.nix
 gitinit.sh
 build
+build/digging
 .direnv
 .envrc
 
