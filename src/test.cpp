@@ -1,5 +1,6 @@
 #include <sqlite3.h>
 #include <cstdio>
+#define Cirg
 
 int main() {
     sqlite3* DB;
