@@ -89,22 +89,23 @@ void engine::dig() {
 
     std::string shovel[7] = {frame1, frame2, frame3, frame4, frame5, frame6, frame7};
 
+    fmt::print("{}", COL_BOLDGREEN);
     /* Render Shovel Animation */
     system("clear");
     for(int i=0; i<6; i++) {
-        printf("%s\n", shovel[i].c_str());
+        fmt::print("{}\n", shovel[i]);
         usleep(dig_time);
         system("clear");
     }
 
     /* Render last shovel and notify player of found reward */
-    printf("%s\nYou found a %s\n", shovel[6].c_str(), item.name.c_str());
-    printf("+%d XP\n", item.xp_item);
+    fmt::print("{}{}\nYou found a {}\n", shovel[6], COL_RESET, item.name);
+    fmt::print("+{} XP\n", item.xp_item);
 
     if(xp >= 100) {
         xp = (xp - 100);
         level += 1;
-        printf("Level Up!\n");
+        fmt::print("Level Up!\n");
     }
 
     bag.push_back(item);

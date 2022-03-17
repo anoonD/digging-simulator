@@ -21,12 +21,12 @@ void engine::init() {
         x -= 1;
         if(x < 1) break;
 
-        printf("You Settle On The Journey To The Digging Planet, Earth...");
-        for(int i=0; i<x; i++) printf("\n");
-        printf("%s", rocket.c_str());
+        fmt::print("You Settle On The Journey To The Digging Planet, Earth...");
+        for(int i=0; i<x; i++) fmt::print("\n");
+        fmt::print("{}{}{}",COL_RED, rocket, COL_RESET);
         usleep(200000);
         system("clear");
     }
-    printf("You have arrived.\n");
+    fmt::print("You have arrived.\n");
     usleep(read_speed);
 }

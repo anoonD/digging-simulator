@@ -2,19 +2,19 @@
 
 void engine::menu() {
     system("clear");
-    printf(
+    fmt::print(
             "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
             "| D I G G I N G - S I M U L A T O R |\n"
             "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
     );
-    printf("Balance: $%d\n", bal);
-    printf("XP: %d\n", xp);
-    printf("Level: %d\n", level);
-    printf("Bag: %ld/%d\n\n", bag.size(), max_inv);
+    fmt::print("Balance: ${}\n", bal);
+    fmt::print("XP: {}\n", xp);
+    fmt::print("Level: {}\n", level);
+    fmt::print("Bag: {}/{}\n\n", bag.size(), max_inv);
 
-    printf("1: Dig\n");
-    printf("2: Sell\n");
-    printf("q: Quit\n");
+    fmt::print("1: Dig\n");
+    fmt::print("2: Sell\n");
+    fmt::print("q: Quit\n");
 
-    printf("\n>> ");
+    fmt::print("\n>> ");
 }

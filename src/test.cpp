@@ -1,10 +1,8 @@
-#include <sqlite3.h>
 #include <cstdio>
+#include <fmt/core.h>
+#include "color.h"
 
 int main() {
-    sqlite3* DB;
-
-    int exit = 0;
-    exit = sqlite3_open("example.db", &DB);
-    printf("%d\n", exit);
+    // fmt::print("%s Hi", color::RED);
+    printf("%sHi", COL_BOLDBLUE);
 }

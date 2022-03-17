@@ -3,8 +3,9 @@
 #include <string>
 #include <iostream>
 #include <vector>
-#include <cstdio>
+#include <fmt/core.h>
 #include <unistd.h>
+#include "color.h"
 
 #define dig_time 1000000
 #define read_speed 2000000

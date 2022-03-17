@@ -14,14 +14,14 @@ int main(int argc, char **argv) {
                 x.dig();
             }
             else {
-                printf("Inventory Full.  Sell some items to free up space.\n");
+                fmt::print("Inventory Full.  Sell some items to free up space.\n");
                 usleep(read_speed);
             }
         }
         else if(choice == "2") x.sell();
         else if (choice == "q") break;
         else {
-            printf("Invalid Input\n");
+            fmt::print("Invalid Input\n");
             usleep(read_speed);
         }
     }
