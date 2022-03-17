@@ -3,5 +3,5 @@
 
 pkgs.mkShell {
   nativeBuildInputs = [ pkgs.cmake ];
-  buildInputs = [ pkgs.sqlite ];
+  buildInputs = [ pkgs.sqlite pkgs.fmt_8 ];
 }
