@@ -25,7 +25,7 @@ void engine::init() {
         for(int i=0; i<x; i++) fmt::print("\n");
         fmt::print(fg(fmt::color::green), "{}", rocket);
         usleep(200000);
-        system("clear");
+        engine::clear();
     }
     fmt::print("You have arrived.\n");
     usleep(read_speed);
