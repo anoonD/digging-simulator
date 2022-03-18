@@ -1,13 +1,16 @@
 #include "engine.h"
 
 void engine::menu() {
-    system("clear");
-    fmt::print(
-        fmt::emphasis::bold | fg(fmt::color::red) | bg(fmt::color::dark_turquoise),
+    engine::clear();
+    
+    fmt::print("{}",
+            fmt::styled(
             "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
             "| D I G G I N G - S I M U L A T O R |\n"
             "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+            , fmt::fg(fmt::color::green) | fmt::bg(fmt::color::blue))
     );
+
     fmt::print("Balance: ${}\n", bal);
     fmt::print("XP: {}\n", xp);
     fmt::print("Level: {}\n", level);

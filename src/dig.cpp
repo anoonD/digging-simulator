@@ -89,17 +89,16 @@ void engine::dig() {
 
     std::string shovel[7] = {frame1, frame2, frame3, frame4, frame5, frame6, frame7};
 
-    fmt::print("{}", COL_BOLDGREEN);
     /* Render Shovel Animation */
-    system("clear");
+    engine::clear();
     for(int i=0; i<6; i++) {
         fmt::print("{}\n", shovel[i]);
         usleep(dig_time);
-        system("clear");
+        engine::clear();
     }
 
     /* Render last shovel and notify player of found reward */
-    fmt::print("{}{}\nYou found a {}\n", shovel[6], COL_RESET, item.name);
+    fmt::print("{}\nYou found a {}\n", shovel[6], item.name);
     fmt::print("+{} XP\n", item.xp_item);
 
     if(xp >= 100) {

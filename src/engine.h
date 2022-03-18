@@ -3,9 +3,9 @@
 #include <string>
 #include <iostream>
 #include <vector>
-#include <fmt/color.h>
 #include <unistd.h>
-#include "color.h"
+
+#include "../include/fmt/include/fmt/color.h"
 
 #define dig_time 1000000
 #define read_speed 2000000
@@ -58,6 +58,16 @@ public:
 
     int getBagSize() { return bag.size(); }
     int getMaxInv() { return max_inv; }
+
+    static inline void clear();
 private:
     Item randomPicker();
 };
+
+inline void engine::clear() {
+    int x = system("clear");
+    if(x != 0) {
+        fmt::print("An error occured with the clear function.\n");
+        exit(1);
+    }
+}

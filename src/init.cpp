@@ -23,7 +23,7 @@ void engine::init() {
 
         fmt::print("You Settle On The Journey To The Digging Planet, Earth...");
         for(int i=0; i<x; i++) fmt::print("\n");
-        fmt::print(fg(fmt::color::green, "{}", rocket);
+        fmt::print(fg(fmt::color::green), "{}", rocket);
         usleep(200000);
         system("clear");
     }

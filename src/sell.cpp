@@ -2,7 +2,7 @@
 
 void engine::sell() {
     std::string input;
-    system("clear");
+    engine::clear();
     fmt::print(
             "~~~~~~~~~~~\n"
             "| S E L L | Type \"a\" to sell all items\n"

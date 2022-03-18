@@ -9,6 +9,7 @@ int main(int argc, char **argv) {
         x.menu();
         std::cin >> choice;
 
+
         if(choice == "1") {
             if(x.getBagSize() < x.getMaxInv()) {
                 x.dig();
