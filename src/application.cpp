@@ -4,7 +4,7 @@ int main(int argc, char **argv) {
     engine x;
     std::string choice;
 
-     engine::init();
+    // engine::init();
     while(true) {
         x.menu();
         std::cin >> choice;
@@ -15,14 +15,14 @@ int main(int argc, char **argv) {
                 x.dig();
             }
             else {
-                fmt::print("Inventory Full.  Sell some items to free up space.\n");
+                fmt::print(COL_BOLD_YELLOW, "Inventory Full.  Sell some items to free up space.\n");
                 usleep(read_speed);
             }
         }
         else if(choice == "2") x.sell();
         else if (choice == "q") break;
         else {
-            fmt::print("Invalid Input\n");
+            fmt::print(COL_BOLD_YELLOW, "Invalid Input\n");
             usleep(read_speed);
         }
     }

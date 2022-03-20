@@ -7,8 +7,13 @@
 
 #include "../include/fmt/include/fmt/color.h"
 
-#define dig_time 1000000
-#define read_speed 2000000
+#define dig_time   200000
+#define read_speed 500000
+
+#define COL_BOLD_BROWN fg(fmt::rgb(161, 136, 127)) | fmt::emphasis::bold
+#define COL_BOLD_BLUE fg(fmt::rgb(164, 186, 220)) | fmt::emphasis::bold 
+#define COL_BOLD_YELLOW fg(fmt::rgb(237, 184, 98)) | fmt::emphasis::bold 
+#define COL_BOLD_RED fg(fmt::rgb(239, 83, 80)) | fmt::emphasis::bold
 
 class engine
 {

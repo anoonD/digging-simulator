@@ -1,4 +1,5 @@
 #include "engine.h"
+#include "fmt/color.h"
 
 void engine::dig() {
     Item item = randomPicker();  // Get random item
@@ -92,19 +93,20 @@ void engine::dig() {
     /* Render Shovel Animation */
     engine::clear();
     for(int i=0; i<6; i++) {
-        fmt::print("{}\n", shovel[i]);
+        fmt::print(COL_BOLD_RED, "{}\n", shovel[i]);
         usleep(dig_time);
         engine::clear();
     }
 
     /* Render last shovel and notify player of found reward */
-    fmt::print("{}\nYou found a {}\n", shovel[6], item.name);
-    fmt::print("+{} XP\n", item.xp_item);
+    fmt::print(COL_BOLD_RED, "{}\n", shovel[6]);
+    fmt::print(COL_BOLD_YELLOW, "You found a {}\n",  item.name);
+    fmt::print(COL_BOLD_YELLOW, "+{} XP\n", item.xp_item);
 
     if(xp >= 100) {
         xp = (xp - 100);
         level += 1;
-        fmt::print("Level Up!\n");
+        fmt::print(COL_BOLD_YELLOW, "Level Up!\n");
     }
 
     bag.push_back(item);

@@ -1,4 +1,5 @@
 #include "engine.h"
+#include "fmt/color.h"
 
 void engine::menu() {
     engine::clear();
@@ -8,17 +9,17 @@ void engine::menu() {
             "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
             "| D I G G I N G - S I M U L A T O R |\n"
             "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-            , fmt::fg(fmt::color::green) | fmt::bg(fmt::color::blue))
+            , COL_BOLD_BROWN)
     );
 
-    fmt::print("Balance: ${}\n", bal);
-    fmt::print("XP: {}\n", xp);
-    fmt::print("Level: {}\n", level);
-    fmt::print("Bag: {}/{}\n\n", bag.size(), max_inv);
+    fmt::print("{} ${}\n", fmt::styled("Balance:", COL_BOLD_BROWN), bal);
+    fmt::print("{} {}\n", fmt::styled("XP:", COL_BOLD_BROWN), xp);
+    fmt::print("{} {}\n", fmt::styled("Level:", COL_BOLD_BROWN), level);
+    fmt::print("{} {}/{}\n\n", fmt::styled("Bag:", COL_BOLD_BROWN), bag.size(), max_inv);
 
-    fmt::print("1: Dig\n");
-    fmt::print("2: Sell\n");
-    fmt::print("q: Quit\n");
+    fmt::print(COL_BOLD_BLUE, "1: Dig\n");
+    fmt::print(COL_BOLD_BLUE, "2: Sell\n");
+    fmt::print(COL_BOLD_BLUE, "q: Quit\n");
 
     fmt::print("\n>> ");
 }
