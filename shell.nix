@@ -2,6 +2,6 @@
 { pkgs ? import <nixpkgs> {}}:
 
 pkgs.mkShell {
-  nativeBuildInputs = [ pkgs.cmake ];
-  buildInputs = [ pkgs.sqlite ];
+  nativeBuildInputs = [ pkgs.cmake pkgs.gcc ];
+  buildInputs = [];
 }

@@ -94,14 +94,14 @@ void engine::dig() {
     engine::clear();
     for(int i=0; i<6; i++) {
         fmt::print(COL_BOLD_RED, "{}\n", shovel[i]);
-        usleep(dig_time);
+        usleep(dig_time-(int)(dig_time*((float)shovel_item.modifier/100.0)) );
         engine::clear();
     }
 
     /* Render last shovel and notify player of found reward */
     fmt::print(COL_BOLD_RED, "{}\n", shovel[6]);
     fmt::print(COL_BOLD_YELLOW, "You found a {}\n",  item.name);
-    fmt::print(COL_BOLD_YELLOW, "+{} XP\n", item.xp_item);
+    fmt::print(COL_BOLD_YELLOW, "+{} XP\n", item.modifier);
 
     if(xp >= 100) {
         xp = (xp - 100);
@@ -125,15 +125,15 @@ engine::Item engine::randomPicker() {
     if(rarity <= 60 ) {
         srand(time(NULL));
         item = rewards[0][rand()%4];
-        xp += item.xp_item;
+        xp += item.modifier;
     }
     else if(rarity > 60 && rarity < 95) {
         item = rewards[1][rand()%4];
-        xp += item.xp_item;
+        xp += item.modifier;
     }
     else if(rarity >= 95) {
         item = rewards[2][rand()%4];
-        xp += item.xp_item;
+        xp += item.modifier;
     }
 
     return item;

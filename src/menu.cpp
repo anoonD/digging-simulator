@@ -15,11 +15,14 @@ void engine::menu() {
     fmt::print("{} ${}\n", fmt::styled("Balance:", COL_BOLD_BROWN), bal);
     fmt::print("{} {}\n", fmt::styled("XP:", COL_BOLD_BROWN), xp);
     fmt::print("{} {}\n", fmt::styled("Level:", COL_BOLD_BROWN), level);
-    fmt::print("{} {}/{}\n\n", fmt::styled("Bag:", COL_BOLD_BROWN), bag.size(), max_inv);
+    fmt::print("{} {}/{}\n", fmt::styled("Bag:", COL_BOLD_BROWN), bag.size(), max_inv);
+    fmt::print("{} {}\n\n", fmt::styled("Shovel:", COL_BOLD_BROWN), shovel_item.name);
 
-    fmt::print(COL_BOLD_BLUE, "1: Dig\n");
-    fmt::print(COL_BOLD_BLUE, "2: Sell\n");
-    fmt::print(COL_BOLD_BLUE, "q: Quit\n");
+    fmt::print(COL_BOLD_BLUE,
+        "1: Dig\n"
+        "2: Sell\n"
+        "3: Shop\n"
+        "q: Quit\n");
 
     fmt::print("\n>> ");
 }
