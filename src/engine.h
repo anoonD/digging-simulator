@@ -85,7 +85,14 @@ public:
 
 private:
     Item randomPicker();
+    static inline void pad(int sizeOfWord, int totalSpaces);
 };
+
+inline void engine::pad(int sizeOfWord, int totalSpaces) {
+    for(int x=sizeOfWord; x<totalSpaces; x++) { // This adds a padding to the costs so that they appear in a table-like fashon, the 20 is the number of spaces used for padding
+        fmt::print(" ");
+    }
+}
 
 inline void engine::clear() {
     int x = system("clear");

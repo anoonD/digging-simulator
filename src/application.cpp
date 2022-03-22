@@ -4,7 +4,7 @@ int main(int argc, char **argv) {
     engine x;
     std::string choice;
 
-    // engine::init();
+    engine::init();
     while(true) {
         x.menu();
         std::cin >> choice;

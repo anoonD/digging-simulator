@@ -20,7 +20,11 @@ void engine::buy() {
 
     if(input == "1") {
         for(int i=0; i<shop[0].size(); i++) {
-            fmt::print(COL_BOLD_BLUE, "{}: {} - {} - Price ${}\n", i+1, shop[0][i].name, shop[0][i].description, shop[0][i].cost);
+            fmt::print(COL_BOLD_BLUE, "{}: {}", i+1, shop[0][i].name);
+            engine::pad(shop[0][i].name.size(), 20);
+            fmt::print(COL_BOLD_BLUE, "{}", shop[0][i].description);
+            engine::pad(shop[0][i].description.size(), 10);
+            fmt::print(COL_BOLD_BLUE, "${}\n", shop[0][i].cost);
         }
         fmt::print("\n>> ");
         std::cin >> input;
@@ -38,8 +42,13 @@ void engine::buy() {
     }
     else if(input == "2") {
         for(int i=0; i<shop[1].size(); i++) {
-            fmt::print(COL_BOLD_BLUE, "{}: {} - {} - Price ${}\n", i+1, shop[1][i].name, shop[1][i].description, shop[1][i].cost);
+            fmt::print(COL_BOLD_BLUE, "{}: {}", i+1, shop[1][i].name);
+            engine::pad(shop[1][i].name.size(), 20);
+            fmt::print(COL_BOLD_BLUE, "{}", shop[1][i].description);
+            engine::pad(shop[1][i].description.size(), 10);
+            fmt::print(COL_BOLD_BLUE, "${}\n", shop[1][i].cost);
         }
+        
         fmt::print("\n>> ");
         std::cin >> input;
         int input_num = atoi(input.c_str());

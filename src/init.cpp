@@ -29,5 +29,5 @@ void engine::init() {
         engine::clear();
     }
     fmt::print("You have arrived.\n");
-    usleep(read_speed);
+    usleep(1000000);
 }

@@ -18,9 +18,7 @@ void engine::sell() {
         fmt::print(COL_BOLD_BLUE, "Pick Item to Sell\n\n");
         for(int i=0; i<bag.size(); i++) {
             fmt::print(COL_BOLD_BLUE, "{}: {}", i+1, bag[i].name);
-            for(int x=bag[i].name.size(); x<20; x++) { // This adds a padding to the costs so that they appear in a table-like fashon, the 20 is the number of spaces used for padding
-                fmt::print(" ");
-            }
+            engine::pad(bag[i].name.size(), 20);
             fmt::print(COL_BOLD_BLUE, "${}\n", bag[i].cost);
         }
         fmt::print(COL_BOLD_BLUE, "q: go back\n");
