@@ -60,11 +60,11 @@ private:
         {"Backpack", 500, 0, "Adds +1 inventory slot to your backpack"},
     },
     {
-        {"Copper Shovel", 500, 5, "5% Speed Boost"},
-        {"Iron Shovel", 1000, 20, "20% Speed Boost"},
-        {"Diamond Shovel", 10000, 30, "30% Speed Boost"},
-        {"Uranium Shovel", 20000, 70, "70% Speed Boost"},
-        {"Dragon Shovel", 30000, 90, "90% Speed Boost"},
+        {"Copper Shovel", 500, 5,       "5% Speed Boost"},
+        {"Iron Shovel", 1000, 20,       "20% Speed Boost"},
+        {"Diamond Shovel", 10000, 30,   "30% Speed Boost"},
+        {"Uranium Shovel", 20000, 70,   "70% Speed Boost"},
+        {"Dragon Shovel", 30000, 90,    "90% Speed Boost"},
     }
     };
 
@@ -83,14 +83,18 @@ public:
 
     static inline void clear();
 
-private:
+    /* Getters and setters */
+    void setBalance(int b) { bal=b; } 
+
+private: // Private Functions
     Item randomPicker();
     static inline void pad(int sizeOfWord, int totalSpaces);
+    void printShopItem(int index);
 };
 
 inline void engine::pad(int sizeOfWord, int totalSpaces) {
-    for(int x=sizeOfWord; x<totalSpaces; x++) { // This adds a padding to the costs so that they appear in a table-like fashon, the 20 is the number of spaces used for padding
-        fmt::print(" ");
+    for(int x=0; x<abs(totalSpaces-sizeOfWord); x++) { // This adds a padding to the costs so that they appear in a 
+        fmt::print(" ");                        // table-like fashon, the 20 is the number of spaces used for padding                            
     }
 }
 
