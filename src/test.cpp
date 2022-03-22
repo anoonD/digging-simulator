@@ -4,9 +4,9 @@
 #include <iostream>
 
 #define STEP 5
-#define TIME 100
-#define ROWS 20
-#define COLS 20
+#define TIME 200
+#define ROWS 10
+#define COLS 10
 
 inline void clear() {
     int x = system("clear");
@@ -32,7 +32,8 @@ void increment(int &color, int &step) {
 int main() {
     int r{0}, g{125}, b{255},
     rstep{STEP}, gstep{STEP}, bstep{STEP};
-    std::string symbol = "██";
+    // std::string symbol = "██";
+    std::string symbol = "HH";
 
     while(true) {
         increment(r, rstep);
@@ -46,7 +47,7 @@ int main() {
 
         for(int x=0; x<ROWS; x++) {
             for(int y=0; y<COLS; y++) {
-                fmt::print(fg(fmt::rgb(r*(x+1), g, b)), "{}", symbol);
+                fmt::print(fg(fmt::rgb(r, g, b)), "{}", symbol);
             }
             fmt::print("\n");
         }
