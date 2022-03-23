@@ -65,9 +65,9 @@ void engine::init() {
         fmt::print("You Settle On The Journey To The Digging Planet, Earth...");
         for(int i=0; i<x; i++) fmt::print("\n");
         fmt::print(fg(fmt::rgb(106, 123, 131)) | fmt::emphasis::bold, "{}", rocket);
-        usleep(200000);
+        sleep(200);
         engine::clear();
     }
     fmt::print("You have arrived.\n");
-    usleep(1000000);
+    sleep(1000);
 }

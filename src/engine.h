@@ -1,16 +1,19 @@
 #pragma once
+
 #include <cstdlib>
 #include <string>
 #include <iostream>
 #include <vector>
-#include <unistd.h>
+#include <thread>
+#include <chrono>
 
 #include "fmt/color.h"
 
-#define dig_time 1000000
-#define read_speed 500000
+#define dig_time 1000
+#define read_speed 500
 
 #define vec std::vector
+#define sleep(x) std::this_thread::sleep_for(std::chrono::milliseconds(x))
 
 #define COL_BOLD_BROWN fg(fmt::rgb(161, 136, 127)) | fmt::emphasis::bold
 #define COL_BOLD_BLUE fg(fmt::rgb(164, 186, 220)) | fmt::emphasis::bold 
@@ -20,7 +23,6 @@
 class engine
 {
 private: // Private Variables
-
     int bal, // Balance
         xp, // Experience
         level, // Level

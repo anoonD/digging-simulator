@@ -94,7 +94,7 @@ void engine::dig() {
     engine::clear();
     for(int i=0; i<6; i++) {
         fmt::print(COL_BOLD_RED, "{}\n", shovel[i]);
-        usleep(dig_time-(int)(dig_time*((float)shovel_item.modifier/100.0)) );
+        sleep(dig_time-(int)(dig_time*((float)shovel_item.modifier/100.0)) );
         engine::clear();
     }
 
@@ -110,7 +110,7 @@ void engine::dig() {
     }
 
     bag.push_back(item);
-    usleep(1000000);
+    sleep(1000);
 }
 
 engine::Item engine::randomPicker() {

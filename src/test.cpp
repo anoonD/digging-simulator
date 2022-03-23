@@ -1,12 +1,16 @@
-#include <fmt/color.h>
-#include <chrono>
 #include <thread>
+#include <chrono>
+#include <cmath>
+#include <fmt/color.h>
+#include <cmath>
 #include <iostream>
 
 #define STEP 5
 #define TIME 200
-#define ROWS 10
-#define COLS 10
+#define ROWS 150
+#define COLS 150
+
+#define sleep(x) std::this_thread::sleep_for(std::chrono::milliseconds(x));
 
 inline void clear() {
     int x = system("clear");
@@ -29,11 +33,16 @@ void increment(int &color, int &step) {
 
 }
 
+int normalize(int val) {
+    if(val >= 255) return val-255;
+    else return val;
+}
+
 int main() {
     int r{0}, g{125}, b{255},
     rstep{STEP}, gstep{STEP}, bstep{STEP};
-    // std::string symbol = "██";
-    std::string symbol = "HH";
+    std::string symbol = "██";
+    // std::string symbol = "HH";
 
     while(true) {
         increment(r, rstep);
@@ -47,12 +56,12 @@ int main() {
 
         for(int x=0; x<ROWS; x++) {
             for(int y=0; y<COLS; y++) {
-                fmt::print(fg(fmt::rgb(r, g, b)), "{}", symbol);
+                fmt::print(fg(fmt::rgb(r*x*y, sqrt(g), b)), "{}", symbol);
             }
             fmt::print("\n");
         }
         
-        std::this_thread::sleep_for(std::chrono::milliseconds(TIME));
+        sleep(TIME);
 
         clear();
     }

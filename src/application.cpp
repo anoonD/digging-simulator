@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
             }
             else {
                 fmt::print(COL_BOLD_YELLOW, "Inventory Full.  Sell some items to free up space.\n");
-                usleep(read_speed);
+                sleep(read_speed);
             }
         }
         else if(choice == "2") x.sell();
@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
         else if (choice == "q") break;
         else {
             fmt::print(COL_BOLD_YELLOW, "Invalid Input\n");
-            usleep(read_speed);
+            sleep(read_speed);
         }
     }
 }

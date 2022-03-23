@@ -38,17 +38,17 @@ void engine::buy() {
         if (input_num > 0 && input_num <= shop[0].size()) {
             if(bal<shop[0][input_num-1].cost) {
                 fmt::print(COL_BOLD_YELLOW, "Not enough money\n");
-                usleep(read_speed);
+                sleep(read_speed);
                 return;
             }
 
             max_inv++;
             fmt::print(COL_BOLD_YELLOW, "Purchased {}\n", shop[0][input_num-1].name);
-            usleep(read_speed);
+            sleep(read_speed);
         }
         else {
             fmt::print(COL_BOLD_YELLOW, "Invalid Input\n");
-            usleep(read_speed);
+            sleep(read_speed);
         }
     }
     else if(input == "2") {
@@ -60,23 +60,23 @@ void engine::buy() {
         
         if(bal<shop[0][input_num-1].cost) {
                 fmt::print(COL_BOLD_YELLOW, "Not enough money\n");
-                usleep(read_speed);
+                sleep(read_speed);
                 return;
         }
 
         if (input_num > 0 && input_num <= shop[1].size()) {
             shovel_item = shop[1][input_num-1];
             fmt::print(COL_BOLD_YELLOW, "Purchased {}\n", shop[1][input_num-1].name);
-            usleep(read_speed);
+            sleep(read_speed);
         }
         else {
             fmt::print(COL_BOLD_YELLOW, "Invalid Input\n");
-            usleep(read_speed);
+            sleep(read_speed);
         }
     }
     else if(input == "q") return;
     else {
        fmt::print(COL_BOLD_YELLOW, "Invalid Input\n");
-        usleep(read_speed);
+        sleep(read_speed);
     }
 }

@@ -12,7 +12,7 @@ void engine::sell() {
 
     if(bag.size() == 0) {
         fmt::print(COL_BOLD_YELLOW, "You have no items!\n");
-        usleep(read_speed);
+        sleep(read_speed);
     }
     else {
         fmt::print(COL_BOLD_BLUE, "Pick Item to Sell\n\n");
@@ -36,18 +36,18 @@ void engine::sell() {
             fmt::print(COL_BOLD_YELLOW, "\n+${}\n", total);
             bal += total;
             bag.clear();
-            usleep(read_speed);
+            sleep(read_speed);
         }
         else if(input_num > 0 && input_num <= bag.size()) {
             fmt::print(COL_BOLD_YELLOW, "\n+{}\n", bag[input_num - 1].cost);
 
             bal += bag[input_num -1 ].cost;
             bag.erase(bag.begin() + input_num - 1 );
-            usleep(read_speed);
+            sleep(read_speed);
         }
         else {
             fmt::print(COL_BOLD_YELLOW, "Invalid Input\n");
-            usleep(read_speed);
+            sleep(read_speed);
         }
     }
 }
