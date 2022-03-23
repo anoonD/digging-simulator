@@ -5,6 +5,7 @@ find_package (SQLite3)
 include_directories(${SQLite3_INCLUDE_DIRS})
 
 add_subdirectory(include/fmt EXCLUDE_FROM_ALL)
+
 add_executable(digging src/application.cpp src/engine.h src/init.cpp src/dig.cpp src/sell.cpp src/menu.cpp src/shop.cpp)
 target_link_libraries(digging PRIVATE fmt::fmt-header-only)
 

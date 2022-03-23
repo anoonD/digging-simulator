@@ -23,7 +23,6 @@ int main(int argc, char **argv) {
         else if(choice == "2") x.sell();
         else if(choice == "3") x.buy();
         else if (choice == "q") break;
-        else if(choice == "freeMoney") x.setBalance(INFINITY);
         else {
             fmt::print(COL_BOLD_YELLOW, "Invalid Input\n");
             usleep(read_speed);
