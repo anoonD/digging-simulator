@@ -9,9 +9,11 @@
 
 #include "fmt/color.h"
 
+/* Initial dig speed and read speed */
 #define dig_time 1000
 #define read_speed 500
 
+/* Macros */
 #define vec std::vector
 #define sleep(x) std::this_thread::sleep_for(std::chrono::milliseconds(x))
 
@@ -20,15 +22,15 @@
 #define COL_BOLD_YELLOW fg(fmt::rgb(237, 184, 98)) | fmt::emphasis::bold 
 #define COL_BOLD_RED fg(fmt::rgb(239, 83, 80)) | fmt::emphasis::bold
 
-class engine
-{
-private: // Private Variables
-    int bal, // Balance
-        xp, // Experience
-        level, // Level
+class engine {
+/* Instance Variables */
+private:
+    int bal,    // Balance
+        xp,     // Experience
+        level,  // Level
         max_inv; // Max Inventory Space
 
-    // Struct to hold name and sell cost
+    // Struct used to hold name and sell cost
     struct Item {
         std::string name;
         int cost;
@@ -39,43 +41,29 @@ private: // Private Variables
     Item shovel_item;
     vec<Item> bag; // User inventory
 
-    vec<vec<Item>> rewards,
-        shop;
-
-public: // Public Functions
+    vec<vec<Item>> rewards; // 2d Vector containing digging rewards
+    vec<vec<Item>> shop;    // 2d Vector containing shop items
+/* Public Functions */
+public:
     engine();
     ~engine();
 
-    static void init();
-    void menu();
+    static void init(); // Rocket animation
+    void menu(); // Main menu
     void dig();
     void sell();
     void buy();
 
+    /* Getters and setters */
     int getBagSize() { return bag.size(); }
     int getMaxInv() { return max_inv; }
-
-    static inline void clear();
-
-    /* Getters and setters */
     void setBalance(int b) { bal=b; } 
 
-private: // Private Functions
-    Item randomPicker();
-    static inline void pad(int sizeOfWord, int totalSpaces);
-    void printShopItem(int index);
+/* Private Functions */
+private:
+    Item randomPicker(); // Used for picking random reward when digging
+
+    void printShopItem(int index);  // Prints shop items
+    static void clear(); // Clears the screen
+    static void pad(int sizeOfWord, int totalSpaces); // Used to add format shop items
 };
-
-inline void engine::pad(int sizeOfWord, int totalSpaces) {
-    for(int x=0; x<abs(totalSpaces-sizeOfWord); x++) { // This adds a padding to the costs so that they appear in a 
-        fmt::print(" ");                        // table-like fashon, the 20 is the number of spaces used for padding                            
-    }
-}
-
-inline void engine::clear() {
-    int x = system("clear");
-    if(x != 0) {
-        fmt::print("An error occured with the clear function.\n");
-        exit(1);
-    }
-}

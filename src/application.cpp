@@ -1,5 +1,7 @@
 #include "engine.h"
+#include "fmt/core.h"
 #include <cmath>
+#include <ratio>
 
 int main(int argc, char **argv) {
     engine x;
@@ -9,7 +11,6 @@ int main(int argc, char **argv) {
     while(true) {
         x.menu();
         std::cin >> choice;
-
 
         if(choice == "1") {
             if(x.getBagSize() < x.getMaxInv()) {

@@ -13,6 +13,7 @@ void engine::printShopItem(int index) {
 void engine::buy() {
     std::string input;
     engine::clear();
+    
     fmt::print( COL_BOLD_BROWN,
             "~~~~~~~~~~~\n"
             "| S H O P |\n"
