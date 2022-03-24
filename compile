@@ -1,5 +1,9 @@
 #!/bin/bash
 
+git submodule init
+git submodule update
+
+rm -rf release
 mkdir -p release
 cd release
 cmake -DCMAKE_BUILD_TYPE=Release ../
